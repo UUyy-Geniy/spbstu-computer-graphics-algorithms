@@ -208,14 +208,24 @@ HRESULT InitDevice(HWND hWnd) {
 }
 
 void CleanupDevice() {
-    if (m_pDeviceContext)
+    if (m_pDeviceContext) {
         m_pDeviceContext->ClearState();
-    if (g_pRenderTargetView)
+        m_pDeviceContext->Release();
+        m_pDeviceContext = nullptr;
+    }
+    if (g_pRenderTargetView) {
         g_pRenderTargetView->Release();
-    if (g_pSwapChain)
+        g_pRenderTargetView = nullptr;
+    }
+    if (g_pSwapChain) {
+        g_pSwapChain->SetFullscreenState(FALSE, nullptr);
         g_pSwapChain->Release();
-    if (g_pd3dDevice)
+        g_pSwapChain = nullptr;
+    }
+    if (g_pd3dDevice) {
         g_pd3dDevice->Release();
+        g_pd3dDevice = nullptr;
+    }
 }
 
 void Render() {
