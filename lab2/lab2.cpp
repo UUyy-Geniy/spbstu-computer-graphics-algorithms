@@ -256,6 +256,12 @@ void CleanupDevice() {
         m_pDeviceContext->Release();
         m_pDeviceContext = nullptr;
     }
+
+    if (g_pVertexBuffer) { g_pVertexBuffer->Release(); g_pVertexBuffer = nullptr; }
+    if (g_pVertexLayout) { g_pVertexLayout->Release(); g_pVertexLayout = nullptr; }
+    if (g_pVertexShader) { g_pVertexShader->Release(); g_pVertexShader = nullptr; }
+    if (g_pPixelShader) { g_pPixelShader->Release(); g_pPixelShader = nullptr; }
+
     if (g_pRenderTargetView) {
         g_pRenderTargetView->Release();
         g_pRenderTargetView = nullptr;
