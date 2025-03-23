@@ -417,14 +417,15 @@ void Render() {
 
 void CleanupDevice() {
     if (m_pDeviceContext) m_pDeviceContext->ClearState();
-    if (g_pVertexBuffer) g_pVertexBuffer->Release();
-    if (g_pVertexLayout) g_pVertexLayout->Release();
-    if (g_pVertexShader) g_pVertexShader->Release();
-    if (g_pPixelShader) g_pPixelShader->Release();
-    if (g_pModelBuffer) g_pModelBuffer->Release();
-    if (g_pVPBuffer) g_pVPBuffer->Release();
-    if (g_pRenderTargetView) g_pRenderTargetView->Release();
-    if (g_pSwapChain) g_pSwapChain->Release();
-    if (m_pDeviceContext) m_pDeviceContext->Release();
-    if (g_pd3dDevice) g_pd3dDevice->Release();
+
+    if (g_pVertexBuffer) { g_pVertexBuffer->Release(); g_pVertexBuffer = nullptr; }
+    if (g_pVertexLayout) { g_pVertexLayout->Release(); g_pVertexLayout = nullptr; }
+    if (g_pVertexShader) { g_pVertexShader->Release(); g_pVertexShader = nullptr; }
+    if (g_pPixelShader) { g_pPixelShader->Release(); g_pPixelShader = nullptr; }
+    if (g_pModelBuffer) { g_pModelBuffer->Release(); g_pModelBuffer = nullptr; }
+    if (g_pVPBuffer) { g_pVPBuffer->Release(); g_pVPBuffer = nullptr; }
+    if (g_pRenderTargetView) { g_pRenderTargetView->Release(); g_pRenderTargetView = nullptr; }
+    if (g_pSwapChain) { g_pSwapChain->Release(); g_pSwapChain = nullptr; }
+    if (m_pDeviceContext) { m_pDeviceContext->Release(); m_pDeviceContext = nullptr; }
+    if (g_pd3dDevice) { g_pd3dDevice->Release(); g_pd3dDevice = nullptr; }
 }
