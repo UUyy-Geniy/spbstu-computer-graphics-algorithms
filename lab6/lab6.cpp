@@ -911,34 +911,40 @@ void Render() {
 
 void CleanupDevice() {
     if (m_pDeviceContext) m_pDeviceContext->ClearState();
-    if (g_pVertexBuffer) g_pVertexBuffer->Release();
-    if (g_pVertexLayout) g_pVertexLayout->Release();
-    if (g_pVertexShader) g_pVertexShader->Release();
-    if (g_pPixelShader) g_pPixelShader->Release();
-    if (g_pModelBuffer) g_pModelBuffer->Release();
-    if (g_pVPBuffer) g_pVPBuffer->Release();
-    if (g_pCubeTextureRV) g_pCubeTextureRV->Release();
-    if (g_pCubeNormalTextureRV) g_pCubeNormalTextureRV->Release();
-    if (g_pSamplerLinear) g_pSamplerLinear->Release();
-    if (g_pRenderTargetView) g_pRenderTargetView->Release();
-    if (g_pDepthStencilView) g_pDepthStencilView->Release();
-    if (g_pSwapChain) g_pSwapChain->Release();
-    if (m_pDeviceContext) m_pDeviceContext->Release();
-    if (g_pd3dDevice) g_pd3dDevice->Release();
-    if (g_pSkyboxVertexBuffer) g_pSkyboxVertexBuffer->Release();
-    if (g_pSkyboxInputLayout) g_pSkyboxInputLayout->Release();
-    if (g_pSkyboxVS) g_pSkyboxVS->Release();
-    if (g_pSkyboxPS) g_pSkyboxPS->Release();
-    if (g_pSkyboxVPBuffer) g_pSkyboxVPBuffer->Release();
-    if (g_pSkyboxTextureRV) g_pSkyboxTextureRV->Release();
-    if (g_pTransparentPS) g_pTransparentPS->Release();
-    if (g_pTransparentBuffer) g_pTransparentBuffer->Release();
-    if (g_pAlphaBlendState) g_pAlphaBlendState->Release();
-    if (g_pDSStateTrans) g_pDSStateTrans->Release();
-    if (g_pLightBuffer) g_pLightBuffer->Release();
-    if (g_pLightPS) g_pLightPS->Release();
-    if (g_pLightColorBuffer) g_pLightColorBuffer->Release();
-    if (g_pPinkColorBuffer) g_pPinkColorBuffer->Release();
-    if (g_pBlueColorBuffer) g_pBlueColorBuffer->Release();
-    if (g_pTransparentVS) g_pTransparentVS->Release();
+
+    if (g_pDSStateTrans) { g_pDSStateTrans->Release(); g_pDSStateTrans = nullptr; }
+    if (g_pAlphaBlendState) { g_pAlphaBlendState->Release(); g_pAlphaBlendState = nullptr; }
+    if (g_pTransparentBuffer) { g_pTransparentBuffer->Release(); g_pTransparentBuffer = nullptr; }
+    if (g_pTransparentPS) { g_pTransparentPS->Release(); g_pTransparentPS = nullptr; }
+    if (g_pTransparentVS) { g_pTransparentVS->Release(); g_pTransparentVS = nullptr; }
+
+    if (g_pSkyboxTextureRV) { g_pSkyboxTextureRV->Release(); g_pSkyboxTextureRV = nullptr; }
+    if (g_pSkyboxVPBuffer) { g_pSkyboxVPBuffer->Release(); g_pSkyboxVPBuffer = nullptr; }
+    if (g_pSkyboxPS) { g_pSkyboxPS->Release(); g_pSkyboxPS = nullptr; }
+    if (g_pSkyboxVS) { g_pSkyboxVS->Release(); g_pSkyboxVS = nullptr; }
+    if (g_pSkyboxInputLayout) { g_pSkyboxInputLayout->Release(); g_pSkyboxInputLayout = nullptr; }
+    if (g_pSkyboxVertexBuffer) { g_pSkyboxVertexBuffer->Release(); g_pSkyboxVertexBuffer = nullptr; }
+
+    if (g_pCubeNormalTextureRV) { g_pCubeNormalTextureRV->Release(); g_pCubeNormalTextureRV = nullptr; }
+    if (g_pCubeTextureRV) { g_pCubeTextureRV->Release(); g_pCubeTextureRV = nullptr; }
+    if (g_pSamplerLinear) { g_pSamplerLinear->Release(); g_pSamplerLinear = nullptr; }
+
+    if (g_pLightColorBuffer) { g_pLightColorBuffer->Release(); g_pLightColorBuffer = nullptr; }
+    if (g_pPinkColorBuffer) { g_pPinkColorBuffer->Release(); g_pPinkColorBuffer = nullptr; }
+    if (g_pBlueColorBuffer) { g_pBlueColorBuffer->Release(); g_pBlueColorBuffer = nullptr; }
+    if (g_pLightBuffer) { g_pLightBuffer->Release(); g_pLightBuffer = nullptr; }
+    if (g_pLightPS) { g_pLightPS->Release(); g_pLightPS = nullptr; }
+    if (g_pModelBuffer) { g_pModelBuffer->Release(); g_pModelBuffer = nullptr; }
+    if (g_pVPBuffer) { g_pVPBuffer->Release(); g_pVPBuffer = nullptr; }
+    if (g_pPixelShader) { g_pPixelShader->Release(); g_pPixelShader = nullptr; }
+    if (g_pVertexShader) { g_pVertexShader->Release(); g_pVertexShader = nullptr; }
+    if (g_pVertexLayout) { g_pVertexLayout->Release(); g_pVertexLayout = nullptr; }
+    if (g_pVertexBuffer) { g_pVertexBuffer->Release(); g_pVertexBuffer = nullptr; }
+
+    if (g_pDepthStencilView) { g_pDepthStencilView->Release(); g_pDepthStencilView = nullptr; }
+    if (g_pRenderTargetView) { g_pRenderTargetView->Release(); g_pRenderTargetView = nullptr; }
+    if (g_pSwapChain) { g_pSwapChain->Release(); g_pSwapChain = nullptr; }
+
+    if (m_pDeviceContext) { m_pDeviceContext->Release(); m_pDeviceContext = nullptr; }
+    if (g_pd3dDevice) { g_pd3dDevice->Release(); g_pd3dDevice = nullptr; }
 }
